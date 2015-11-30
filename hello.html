@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="Keywords" content="blog"/>
+    <meta name="Description" content="blog"/>
+    <title>Simple</title>
+    <link rel="shortcut icon" href="/static/favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+</head>
+<body>
+<div class="main">
+    <div class="header">
+    	<ul id="pages">
+            <li><a href="/">home</a></li>
+            <li><a href="/#/tags">tags</a></li>
+            <li><a href="/#/archive">archive</a></li>
+    	</ul>
+    </div>
+	<div class="wrap-header">
+	<h1>
+    <a href="/" id="title"></a>
+	</h1>
+	</div>
+<div id="md" style="display: none;">
+<!-- markdown -->
+##Hello World
+
+This is a `test`.
+$x^2=1$
+
+~~~~{python}
+print 'Hello World'
+~~~~
+The first time, I write markdown.
+
+
+
+
+
+<!-- markdown end -->
+</div>
+<div class="entry" id="main">
+<!-- content -->
+<h2 id="helloworld">Hello World</h2>
+
+<p>This is a <code>test</code>.
+<span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-103-Frame"><nobr><span class="math" id="MathJax-Span-603" role="math" style="display: inline-block; width: 3.402em;"><span style="display: inline-block; position: relative; width: 2.702em; height: 0px; font-size: 125%;"><span style="position: absolute; clip: rect(1.353em 1000em 2.452em -999.998em); top: -2.298em; left: 0.003em;"><span class="mrow" id="MathJax-Span-604" style="display: inline-block;"><span class="msubsup" id="MathJax-Span-605" style="display: inline-block;"><span style="display: inline-block; position: relative; width: 0.953em; height: 0px;"><span style="position: absolute; clip: rect(3.452em 1000em 4.152em -999.998em); top: -3.998em; left: 0.003em;"><span class="mi" id="MathJax-Span-606" style="display: inline-block;"><img src="http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/png/Math/Italic/400/0078.png?rev=2.5.3" style="width: 10px; height: 9px; vertical-align: 0px; margin-right: 0.053em;"></span><span style="display: inline-block; width: 0px; height: 4.002em;"></span></span><span style="position: absolute; top: -4.348em; left: 0.552em;"><span class="mn" id="MathJax-Span-607" style="display: inline-block; font-size: 70.7%;"><img src="http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/png/Main/Regular/283/0032.png?rev=2.5.3" style="width: 6px; height: 9px; margin-right: 0.053em;"></span><span style="display: inline-block; width: 0px; height: 4.002em;"></span></span></span></span><span class="mo" id="MathJax-Span-608" style="display: inline-block; padding-left: 0.302em;"><img src="http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/png/Main/Regular/400/003D.png?rev=2.5.3" style="width: 13px; height: 4px; vertical-align: 2px; margin-right: 0.053em;"></span><span class="mn" id="MathJax-Span-609" style="display: inline-block; padding-left: 0.302em;"><img src="http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/png/Main/Regular/400/0031.png?rev=2.5.3" style="width: 8px; height: 12px; margin-right: 0.053em;"></span></span><span style="display: inline-block; width: 0px; height: 2.302em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.128em; vertical-align: -0.059em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-103">x^2=1</script></p>
+
+<p></p><pre class=" language-python"><code class=" language-python"><span class="token keyword">print</span> <span class="token string">'Hello World'</span>
+</code></pre>The first time, I write markdown.<p></p>
+<!-- content end -->
+</div>
+<br>
+<br>
+    <div id="disqus_thread"></div>
+	<div class="footer">
+		<p>© Copyright 2014 by isnowfy, Designed by isnowfy</p>
+	</div>
+</div>
+<script src="main.js"></script>
+<script id="content" type="text/mustache">
+    <h1>{{title}}</h1>
+    <div class="tag">
+    {{date}}
+    {{#tags}}
+    <a href="/#/tag/{{name}}">#{{name}}</a>
+    {{/tags}}
+    </div>
+</script>
+<script id="pagesTemplate" type="text/mustache">
+    {{#pages}}
+    <li>
+        <a href="{{path}}">{{title}}</a>
+    </li>
+    {{/pages}}
+</script>
+<script>
+$(document).ready(function() {
+    $.ajax({
+        url: "main.json",
+        type: "GET",
+        dataType: "json",
+        success: function(data) {
+            $("#title").html(data.name);
+            var pagesTemplate = Hogan.compile($("#pagesTemplate").html());
+            var pagesHtml = pagesTemplate.render({"pages": data.pages});
+            $("#pages").append(pagesHtml);
+            //path
+            var path = "hello.html";
+            //path end
+            var now = 0;
+            for (var i = 0; i < data.posts.length; ++i)
+                if (path == data.posts[i].path)
+                    now = i;
+            var post = data.posts[now];
+            var tmp = post.tags.split(" ");
+            var tags = [];
+            for (var i = 0; i < tmp.length; ++i)
+                if (tmp[i].length > 0)
+                    tags.push({"name": tmp[i]});
+            var contentTemplate = Hogan.compile($("#content").html());
+            var contentHtml = contentTemplate.render({"title": post.title, "tags": tags, "date": post.date});
+            $("#main").prepend(contentHtml);
+            if (data.disqus_shortname.length > 0) {
+                var disqus_shortname = data.disqus_shortname;
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            }
+        }
+    });
+});
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ["\\(", "\\)"]], processEscapes: true}});
+</script>
+</body>
+</html>
