@@ -5,8 +5,21 @@
     <description>Recent content on luoluo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Thu, 06 Jan 2022 18:10:32 -0800</lastBuildDate>
     
         <atom:link href="https://luox2.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>Hello World</title>
+        <link>https://luox2.github.io/posts/hello-world/</link>
+        <pubDate>Thu, 06 Jan 2022 18:10:32 -0800</pubDate>
+        
+        <guid>https://luox2.github.io/posts/hello-world/</guid>
+        <description>luoluo https://luox2.github.io/posts/hello-world/ -&lt;p&gt;大家好，这是使用hugo发布的第一篇博客。今天是2022年1月6日，我终于开始搭建自己的静态博客了。目前博客使用github提供的免费空间，后面我会熟悉第三方支持，把页面变得更好看一些。&lt;/p&gt;
+- https://luox2.github.io/posts/hello-world/ - </description>
+        </item>
     
     
   </channel>
