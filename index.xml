@@ -5,9 +5,36 @@
     <description>Recent content on luoluo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 22 Jan 2022 11:21:07 -0800</lastBuildDate>
+    <lastBuildDate>Sat, 08 Oct 2022 23:10:14 -0700</lastBuildDate>
     
         <atom:link href="https://luox2.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>Fog of World 世界迷雾</title>
+        <link>https://luox2.github.io/posts/fog-of-world/</link>
+        <pubDate>Sat, 08 Oct 2022 23:10:14 -0700</pubDate>
+        
+        <guid>https://luox2.github.io/posts/fog-of-world/</guid>
+        <description>luoluo https://luox2.github.io/posts/fog-of-world/ -&lt;p&gt;这篇博客分享我最喜欢的手机应用——&lt;a href=&#34;https://fogofworld.app/zh-hans/&#34;&gt;世界迷雾&lt;/a&gt;，以下是使用截图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./status.PNG&#34; alt=&#34;test&#34;&gt;
+World (2017~&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./bayarea.jpg&#34; alt=&#34;&#34;&gt;
+Bay Area (2022.7~&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这个应用可以记录我在地球上的所有足迹，带来游戏体验感和帮助回忆去过的地方。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;使用说明&#34;&gt;使用说明&lt;/h2&gt;
+&lt;p&gt;只需打开始终允许访问位置，并且当前手机GPS信号正常，应用就可以在地图上记录，消除迷雾。实际使用中，在高铁和飞行较低的飞机靠窗位置，也有可能接收GPS信号。使用云备份，防止数据丢失。&lt;/p&gt;
+&lt;h2 id=&#34;护照和徽章&#34;&gt;护照和徽章&lt;/h2&gt;
+&lt;p&gt;&lt;img src=./passport.jpeg width=33% /&gt;&lt;img src=./cn.PNG width=33% /&gt;&lt;img src=./us.PNG width=33%/&gt;
+&lt;img src=./west.PNG width=33% /&gt;&lt;img src=./easter.PNG width=33% /&gt;&lt;img src=./antarctica.jpeg width=33% /&gt;&lt;/p&gt;
+&lt;p&gt;「西方的哪一个国家我没去过？」&lt;/p&gt;
+&lt;h2 id=&#34;迷雾机器第三方扩展&#34;&gt;迷雾机器（第三方扩展&lt;/h2&gt;
+&lt;p&gt;由于之前导入了航班飞行路线，使得地图非常凌乱。&lt;a href=&#34;https://github.com/CaviarChen/fog-machine&#34;&gt;迷雾机器&lt;/a&gt;可以对迷雾地图数据进行可视化编辑。将修改后的文件存放云端，再同步手机即可。&lt;/p&gt;
+- https://luox2.github.io/posts/fog-of-world/ - </description>
+        </item>
     
     
     
